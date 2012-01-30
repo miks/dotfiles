@@ -16,4 +16,5 @@
 [color]
 	ui = true
 [core]
-	excludesfile = /Users/miks/.gitignore_global
+  excludesfile = /Users/miks/.gitignore_global
+  editor = vim

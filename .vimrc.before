@@ -1,1 +1,6 @@
 call janus#disable_plugin('nerdtree')
+call janus#disable_plugin('tagbar')
+call janus#disable_plugin('easymotion')
+call janus#disable_plugin('nrrwrgn')
+call janus#disable_plugin('zoomwin')
+call janus#disable_plugin('buffegrator')

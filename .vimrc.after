@@ -8,6 +8,7 @@ color desert
 
 set guifont=DejaVu:h13
 set guioptions=aAce
+set wrap
 
 if has("gui_macvim")
   set transparency=7

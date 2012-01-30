@@ -1,0 +1,19 @@
+[user]
+	name = miks
+	email = miks@cubesystems.lv
+[difftool "Kaleidoscope"]
+[difftool]
+[diff]
+[github]
+	user = miks
+	;token = 
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+  tool = Kaleidoscope
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/miks/.gitignore_global

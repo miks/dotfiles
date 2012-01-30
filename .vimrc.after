@@ -1,0 +1,47 @@
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+au FileType php set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType smarty set softtabstop=4 tabstop=4 shiftwidth=4
+
+" Default gui color scheme
+color desert
+
+set guifont=DejaVu:h13
+set guioptions=aAce
+
+if has("gui_macvim")
+  set transparency=7
+  " Allow to select multiple lines with shift
+  let macvim_hig_shift_movement = 1
+
+  " Don't beep
+  set visualbell
+
+  " Start without the toolbar
+  set guioptions-=T
+
+  " for ctrlp plugin to open selection in new tab
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': [],
+    \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+    \ }
+endif
+
+" disable copy on select
+set go-=a
+
+set hidden
+set ignorecase
+set smartcase
+
+" Add Git info to status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Some extra files to ignore for command-t and autocomplete
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=vendor/cache/**
+
+" Sort tags by name
+let Tlist_Sort_Type = "name"
+let Tlist_WinWidth = 40

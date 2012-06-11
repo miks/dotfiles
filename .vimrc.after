@@ -1,8 +1,13 @@
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au Bufread,BufNewFile *.as set filetype=actionscript
+
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType smarty set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
+
+au FileType actionscript set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab noendofline
+autocmd FileType actionscript setlocal noeol binary fileformat=dos
 
 " Default gui color scheme
 color desert

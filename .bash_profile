@@ -1,22 +1,48 @@
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#
+# Colors
+#
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+NORMAL="\[\033[0m\]"
+
+
 export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec/bin:$PATH
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+export FLEX_HOME=/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export LC_ALL=en_US.UTF-8
 
-export MAGICK_HOME="$HOME/ImageMagick-6.7.3"
-export PATH="$MAGICK_HOME/bin:$PATH"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/:/usr/local/mysql/lib/"
-
-alias vi=mvim
-alias office="ssh office"
-alias st="git status"
-alias ci="git commit"
-alias di="git diff"
-alias push="git push"
+alias vi="/usr/local/bin/mvim"
 alias pull="git pull"
+alias push="git push"
+alias ci="git commit"
+alias st="git status"
+alias di="git diff"
+alias office="ssh office"
 alias irc="ssh -t irc screen -rdU"
 
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+[[ -s "/Users/miks/.rvm/scripts/rvm" ]] && source "/Users/miks/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#
+# Prompt Setup
+#
+function parse_git_in_rebase {
+  [[ -d .git/rebase-apply ]] && echo " REBASING"
+}
+
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+function parse_git_branch {
+  branch=$(git branch 2> /dev/null | grep "*" | sed -e s/^..//g)
+  if [[ -z ${branch} ]]; then
+    return
+  fi
+  echo " ("${branch}$(parse_git_dirty)$(parse_git_in_rebase)")"
+}
+
+export PS1="$RED\u@\h:$GREEN\W$YELLOW\$(parse_git_branch)$NORMAL\$ " # Add git info to the prompt

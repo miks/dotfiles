@@ -30,7 +30,7 @@ if has("gui_macvim")
   set guioptions-=T
 
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](files|shared\/cache)$',
+  \ 'dir':  '\v[\/](files|shared\/cache|shared\/3rdpart)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 

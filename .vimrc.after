@@ -7,8 +7,6 @@ au FileType smarty set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
 
 au FileType actionscript set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab noendofline
-autocmd FileType actionscript setlocal noeol binary fileformat=dos
-
 set t_Co=256
 
 " Default gui color scheme
@@ -30,6 +28,11 @@ if has("gui_macvim")
 
   " Start without the toolbar
   set guioptions-=T
+
+  let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](files|shared\/cache)$',
+  \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
+  \ }
 
   " for ctrlp plugin to open selection in new tab
   let g:ctrlp_prompt_mappings = {

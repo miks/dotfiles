@@ -4,3 +4,6 @@ call janus#disable_plugin('easymotion')
 call janus#disable_plugin('nrrwrgn')
 call janus#disable_plugin('zoomwin')
 call janus#disable_plugin('buffegrator')
+call janus#disable_plugin('rails')
+
+set directory=~/.vim/tmp

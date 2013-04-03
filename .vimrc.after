@@ -29,8 +29,21 @@ if has("gui_macvim")
   " Start without the toolbar
   set guioptions-=T
 
+  let g:ctrlp_regexp = 1
+
+  let g:ctrlp_abbrev = {
+  \ 'gmode': 't',
+  \ 'abbrevs': [
+  \ {
+  \ 'pattern': ' ',
+  \ 'expanded': '.*',
+  \ 'mode': 'pfrz',
+  \ }
+  \ ]
+  \ }
+
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](files|shared\/cache|shared\/3rdpart)$',
+  \ 'dir':  '\v[\/](files|coverage|tmp|shared\/cache|shared\/3rdpart)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 

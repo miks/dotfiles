@@ -16,6 +16,14 @@ set guifont=DejaVu:h13
 set guioptions=aAce
 set wrap
 
+" ruby files settings
+augroup filetype_ruby
+  if has("balloon_eval")
+    " Annoying plugins keep turning ballooneval on
+    autocmd BufEnter *.rb setlocal noballooneval
+  endif
+augroup END
+
 if has("gui_macvim")
   set transparency=7
   " Allow to select multiple lines with shift

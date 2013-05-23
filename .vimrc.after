@@ -51,7 +51,7 @@ if has("gui_macvim")
   \ }
 
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](files|coverage|tmp|shared\/cache|shared\/3rdpart)$',
+  \ 'dir':  '\v[\/](files|coverage|tmp|shared\/cache|shared\/3rdpart|rdoc|doc)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 

@@ -16,6 +16,38 @@ set guifont=DejaVu:h13
 set guioptions=aAce
 set wrap
 
+function! PromptRemoveTrainingWhitespace()
+  let has_trailing_spaces=!!search('\v\s+$', 'cwn')
+  if has_trailing_spaces
+    if ! exists("b:remove_trailing_whitespace")
+      let has_trailing_spaces=!!search('\v\s+$', 'cwn')
+      if has_trailing_spaces
+        let choice = confirm("Remove trailing whitespace?", "&Yes\n&No")
+        if choice == 1
+          call Trim()
+          let b:remove_trailing_whitespace = 1
+        else
+          let b:remove_trailing_whitespace = 0
+        endif
+      endif
+    elseif b:remove_trailing_whitespace == 1
+      call Trim()
+    endif
+  endif
+endfunction
+
+function! Trim()
+  let cur_linenr = line('.')
+  let cur_col = col('.')
+  let _s=@/
+  %s/\s\+$//e
+  let @/=_s
+  nohl
+  call cursor(cur_linenr, cur_col)
+endfunction
+
+autocmd BufWritePre * call PromptRemoveTrainingWhitespace()
+
 " ruby files settings
 augroup filetype_ruby
   if has("balloon_eval")
@@ -51,7 +83,7 @@ if has("gui_macvim")
   \ }
 
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](files|coverage|tmp|shared\/cache|shared\/3rdpart|rdoc|doc)$',
+  \ 'dir':  '\v[\/](files|coverage|public|tmp|shared\/cache|shared\/3rdpart|rdoc|doc)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 

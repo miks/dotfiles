@@ -1,0 +1,3 @@
+[submodule ".janus/vim-autoformat-rails"]
+	path = .janus/vim-autoformat-rails
+	url = https://github.com/KurtPreston/vim-autoformat-rails.git

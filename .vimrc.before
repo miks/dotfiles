@@ -6,4 +6,5 @@ call janus#disable_plugin('zoomwin')
 call janus#disable_plugin('buffegrator')
 call janus#disable_plugin('rails')
 
+set rtp+=~/code/powerline/powerline/bindings/vim
 set directory=~/.vim/tmp

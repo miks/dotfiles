@@ -12,7 +12,7 @@ set t_Co=256
 " Default gui color scheme
 color desert256
 
-set guifont=DejaVu:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 set guioptions=aAce
 set wrap
 
@@ -105,7 +105,7 @@ set ignorecase
 set smartcase
 
 " Add Git info to status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Some extra files to ignore for command-t and autocomplete
 set wildignore+=log/**

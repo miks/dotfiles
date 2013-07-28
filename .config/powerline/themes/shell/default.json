@@ -1,0 +1,35 @@
+{
+	"default_module": "powerline.segments.common",
+	"segment_data": {
+		"hostname": {
+			"before": " ",
+			"args": {
+				"only_if_ssh": true
+			}
+		},
+		"virtualenv": {
+			"before": "ⓔ  "
+		},
+		"branch": {
+			"before": " "
+		}
+	},
+	"segments": {
+		"left": [
+			{
+				"name": "cwd",
+				"args": {
+					"dir_limit_depth": 3
+				}
+			},
+			{
+                "module": "powerlinex.segment.git-branch-osx",
+				"name": "branch",
+				"args": {
+					"status_colors": "true"
+				}
+			}
+		]
+	}
+}
+

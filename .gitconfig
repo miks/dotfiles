@@ -1,18 +1,11 @@
 [user]
 	name = miks
 	email = miks@cubesystems.lv
-[difftool "Kaleidoscope"]
-[difftool]
-[diff]
 [github]
 	user = miks
-	;token = 
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+	;token =
 [difftool]
 	prompt = false
-[diff]
-  tool = Kaleidoscope
 [color]
 	ui = true
 [core]

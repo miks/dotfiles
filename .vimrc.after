@@ -6,6 +6,10 @@ au FileType php set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType smarty set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
 au FileType actionscript set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab noendofline
 set t_Co=256
 
@@ -61,7 +65,7 @@ if has("gui_macvim")
   " Allow to select multiple lines with shift
   let macvim_hig_shift_movement = 1
 
-  color desert
+  color solarized
 
   " Don't beep
   set visualbell

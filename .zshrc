@@ -1,8 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="agnoster"
+export ZSH_CUSTOM=~/code/dotfiles/zsh_custom
+ZSH_THEME="custom_agnoster"
 plugins=(git ruby rails bundler)
-
-export PATH="/Users/miks/.rvm/gems/ruby-2.1.2/bin:/Users/miks/.rvm/gems/ruby-2.1.2@global/bin:/Users/miks/.rvm/rubies/ruby-2.1.2/bin:/opt/local/bin:/opt/local/sbin:/Users/miks/Library/Python/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/Cellar/go/1.2/libexec/bin:/Users/miks/.rvm/bin"
 
 source $ZSH/oh-my-zsh.sh
 

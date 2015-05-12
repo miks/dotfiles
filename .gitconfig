@@ -1,13 +1,10 @@
 [user]
-	name = miks
-	email = miks@cubesystems.lv
-[github]
-	user = miks
-	;token =
-[difftool]
-	prompt = false
+  name = miks
+  email = miks@cubesystems.lv
 [color]
-	ui = true
+  ui = true
 [core]
-  excludesfile = /Users/miks/.gitignore_global
-  editor = vim
+  excludesfile = ~/.gitignore_global
+  editor = vim -f
+[push]
+  default = simple

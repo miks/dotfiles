@@ -18,4 +18,5 @@ call janus#disable_plugin('narrowregion')
 call janus#disable_plugin('repeat')
 call janus#disable_plugin('vroom')
 call janus#disable_plugin('visualstar')
+call janus#disable_plugin('vimwiki')
 set directory=~/.vim/tmp

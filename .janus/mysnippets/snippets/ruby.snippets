@@ -26,12 +26,8 @@ snippet pry
 #     Rspec snippets     #
 ##########################
 snippet desc
-	describe ${1:`substitute(substitute(SnippetsFilename(), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
+	describe "#${1:method}" do
 		${0}
-	end
-snippet descm
-	describe "${1:#method}" do
-		${0:pending "Not implemented"}
 	end
 snippet cont
 	context "${1:message}" do

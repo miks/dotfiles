@@ -11,7 +11,7 @@ export RELEAF_DUMMY_DB_USERNAME=root
 export RELEAF_DUMMY_DB_PASSWORD=
 export RELEAF_DUMMY_DB_NAME=releaf_dummy
 
-alias makepasswd="openssl rand -base64 12 |md5 |head -c12;echo"
+alias makepasswd="apg -m 16 -n 1"
 alias vi="mvim"
 alias st="git status"
 alias grep="grep --color"

@@ -1,10 +1,13 @@
 ########## Variables
 
+
 dir=~/code/dotfiles               # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".gitconfig .gitignore_global .pryrc .vimrc.after .vimrc.before .zshrc .my.cnf"   # list of files/folders to symlink in homedir
+files=".gitconfig .gitignore_global .pryrc .vimrc.after .vimrc.before .zshrc .my.cnf .janus" # list of files/folders to symlink in homedir
 
-##########
+# checkout submodules
+git submodule init
+git submodule update
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"

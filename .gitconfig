@@ -7,4 +7,4 @@
   excludesfile = ~/.gitignore_global
   editor = vim -f
 [push]
-  default = simple
+  default = current

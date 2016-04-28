@@ -3,7 +3,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/code/dotfiles/zsh_custom
 ZSH_THEME="custom_agnoster"
-plugins=(git ruby bundler)
+plugins=(git ruby bundler virtualenv-zsh)
 
 source $ZSH/oh-my-zsh.sh
 

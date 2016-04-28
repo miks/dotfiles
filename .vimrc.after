@@ -66,6 +66,8 @@ endfunction
 
 autocmd BufWritePre * call PromptRemoveTrainingWhitespace()
 
+:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
+
 " ruby files settings
 augroup filetype_ruby
   if has("balloon_eval")
@@ -89,6 +91,7 @@ if has("gui_macvim")
   set guioptions-=T
 
   let g:ctrlp_regexp = 1
+  let g:RspecBin = "spring rspec"
 
   let g:ctrlp_abbrev = {
   \ 'gmode': 't',

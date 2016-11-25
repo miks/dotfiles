@@ -105,7 +105,7 @@ if has("gui_macvim")
   \ }
 
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|rdoc|doc|private)$',
+  \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|vendor|rdoc|doc|private|_images|_build|deps|rel|_nerves-tmp)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 
@@ -132,7 +132,7 @@ set smartcase
 " Some extra files to ignore for command-t and autocomplete
 set wildignore+=log/**
 set wildignore+=tmp/**
-set wildignore+=vendor/cache/**
+set wildignore+=vendor/**
 
 " Sort tags by name
 let Tlist_Sort_Type = "name"

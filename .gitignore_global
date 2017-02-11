@@ -21,3 +21,4 @@ Icon
 Thumbs.db
 ._*
 .virtualenv
+Carthage/Build

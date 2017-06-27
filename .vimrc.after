@@ -3,14 +3,15 @@ au Bufread,BufNewFile *.as set filetype=actionscript
 
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4
-au FileType smarty set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType vue set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType es6 set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType scss set softtabstop=4 tabstop=4 shiftwidth=4
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-au FileType actionscript set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab noendofline
 set t_Co=256
 
 " Default gui color scheme
@@ -105,7 +106,7 @@ if has("gui_macvim")
   \ }
 
   let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|vendor|rdoc|doc|private|_images|_build|deps|rel|_nerves-tmp)$',
+  \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|vendor|rdoc|doc|private|_images|_build|deps|rel|_nerves-tmp|node_modules)$',
   \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
   \ }
 

@@ -1,7 +1,8 @@
 export PATH=$PATH:/usr/local/Caskroom/sparkle/1.16.0/bin
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/code/dotfiles/zsh_custom
-ZSH_THEME="custom_agnoster"
+export DEFAULT_USER=miks
+ZSH_THEME="agnoster"
 plugins=(git ruby bundler virtualenv-zsh)
 
 source $ZSH/oh-my-zsh.sh

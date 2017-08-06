@@ -7,6 +7,7 @@ au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType vue set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType es6 set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType scss set softtabstop=4 tabstop=4 shiftwidth=4
+au FileType css set softtabstop=4 tabstop=4 shiftwidth=4
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1

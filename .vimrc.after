@@ -1,7 +1,6 @@
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au Bufread,BufNewFile *.as set filetype=actionscript
 
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType php set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType javascript set softtabstop=4 tabstop=4 shiftwidth=4
 au FileType vue set softtabstop=4 tabstop=4 shiftwidth=4
@@ -22,6 +21,13 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 set guioptions=aAce
 set wrap
 
+""" vim-test config (https://github.com/janko-m/vim-test)
+
+" Run vim-test in iterm
+let test#strategy = "iterm"
+
+" Map vim-test to CMD+SHIFT+R shortcut
+map <D-R> :TestNearest<CR>
 
 function! SnippetsFilename(...)
   let template = get(a:000, 0, "$1")
@@ -108,7 +114,7 @@ if has("gui_macvim")
 
   let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|vendor|rdoc|doc|private|_images|_build|deps|rel|_nerves-tmp|node_modules)$',
-  \ 'file': '\v\.(jpg|png|gif|db|DS_Store|ico)$',
+  \ 'file': '\v\.(jpg|png|gif|db|DS_Store|pyc|ico)$',
   \ }
 
   " for ctrlp plugin to open selection in new tab

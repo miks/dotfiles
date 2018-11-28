@@ -19,4 +19,5 @@ call janus#disable_plugin('repeat')
 call janus#disable_plugin('vroom')
 call janus#disable_plugin('visualstar')
 call janus#disable_plugin('vimwiki')
+call janus#disable_plugin('rspec')
 set directory=~/.vim/tmp

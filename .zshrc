@@ -2,7 +2,6 @@ export PATH=$PATH:/usr/local/Caskroom/sparkle/1.16.0/bin
 export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
 export PATH="/usr/local/opt/e2fsprogs/sbin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=~/code/dotfiles/zsh_custom
 export DEFAULT_USER=miks
 ZSH_THEME="agnoster"
 plugins=(git ruby bundler virtualenv-zsh kubectl)

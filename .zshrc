@@ -4,7 +4,7 @@ export PATH="/usr/local/opt/e2fsprogs/sbin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
 export DEFAULT_USER=miks
 ZSH_THEME="agnoster"
-plugins=(git ruby bundler virtualenv-zsh kubectl)
+plugins=(git ruby bundler kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,6 +21,8 @@ alias st="git status"
 alias grep="grep --color"
 alias di="git diff"
 alias ci="git commit"
+alias pl="git pull"
+alias ck="git checkout"
 alias irc="ssh -t irc screen -rdU"
 
 
@@ -37,3 +39,18 @@ if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/go
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+
+kexec() {
+  pod_name_content=$1
+  namespace=$2
+  remote_command=${3:-bash}
+
+  pod_name=$(rancher kubectl get pods -n $namespace  | grep $pod_name_content  | cut -d ' ' -f 1)
+  if [ "$pod_name"  = '' ]; then
+    echo "No matching pod with name \"$pod_name_content\" within \"$namespace\" namespace"
+  else
+    rancher kubectl exec -ti -n $namespace $pod_name -- $remote_command
+  fi
+}

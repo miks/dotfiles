@@ -47,10 +47,23 @@ kexec() {
   namespace=$2
   remote_command=${3:-bash}
 
-  pod_name=$(rancher kubectl get pods -n $namespace  | grep $pod_name_content  | cut -d ' ' -f 1)
+  pod_name=$(rancher kubectl get pods -n $namespace  | grep $pod_name_content | head -n 1  | cut -d ' ' -f 1)
   if [ "$pod_name"  = '' ]; then
     echo "No matching pod with name \"$pod_name_content\" within \"$namespace\" namespace"
   else
     rancher kubectl exec -ti -n $namespace $pod_name -- $remote_command
+  fi
+}
+
+klogs() {
+  pod_name_content=$1
+  namespace=$2
+  remote_command=${3:-bash}
+
+  pod_name=$(rancher kubectl get pods -n $namespace  | grep $pod_name_content | head -n 1  | cut -d ' ' -f 1)
+  if [ "$pod_name"  = '' ]; then
+    echo "No matching pod with name \"$pod_name_content\" within \"$namespace\" namespace"
+  else
+    rancher kubectl logs --tail=10 -f -n $namespace $pod_name
   fi
 }

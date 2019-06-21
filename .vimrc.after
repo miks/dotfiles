@@ -22,6 +22,7 @@ set guioptions=aAce
 set wrap
 
 """ vim-test config (https://github.com/janko-m/vim-test)
+let test#project_root = "/Users/miks/code/captomatic-api"
 
 " Run vim-test in iterm
 let test#strategy = "iterm"

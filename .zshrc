@@ -1,6 +1,8 @@
 export PATH=$PATH:/usr/local/Caskroom/sparkle/1.16.0/bin
 export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
 export PATH="/usr/local/opt/e2fsprogs/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
 export DEFAULT_USER=miks
 ZSH_THEME="agnoster"

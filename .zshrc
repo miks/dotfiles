@@ -1,4 +1,5 @@
 export PATH=$PATH:/usr/local/Caskroom/sparkle/1.16.0/bin
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/e2fsprogs/bin:$PATH"
 export PATH="/usr/local/opt/e2fsprogs/sbin:$PATH"
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
@@ -18,7 +19,7 @@ export RELEAF_DUMMY_DB_NAME=releaf_dummy
 export FLASK_ENV=development
 
 alias makepasswd="pwgen -Bs 16 1"
-alias vi="/Applications/MacVim.app/Contents/bin/mvim"
+alias vi="mvim"
 alias st="git status"
 alias grep="grep --color"
 alias di="git diff"

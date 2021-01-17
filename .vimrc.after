@@ -113,10 +113,8 @@ if has("gui_macvim")
   \ ]
   \ }
 
-  let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](coverage|public|tmp|shared\/cache|vendor|rdoc|doc|private|_images|_build|deps|rel|_nerves-tmp|node_modules)$',
-  \ 'file': '\v\.(jpg|png|gif|db|DS_Store|pyc|ico)$',
-  \ }
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = ['.git', 'cd %s && rg --hidden --files --iglob "config/**"', 'find %s -type f']
 
   " for ctrlp plugin to open selection in new tab
   let g:ctrlp_prompt_mappings = {
@@ -134,14 +132,6 @@ set go-=a
 set hidden
 set ignorecase
 set smartcase
-
-" Add Git info to status line
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" Some extra files to ignore for command-t and autocomplete
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=vendor/**
 
 " Sort tags by name
 let Tlist_Sort_Type = "name"

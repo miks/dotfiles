@@ -5,6 +5,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
   editor = vim -f
 [push]
   default = current
@@ -15,3 +16,5 @@
 	required = true
 [tag]
 	sort = version:refname
+[diff "ansible-vault"]
+  textconv = ansible-vault view
